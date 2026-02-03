@@ -3,30 +3,30 @@ package ru.netology.stats;
 public class StatsService {
 
     //Сумма всех продаж
-    public int calculateTotalSales(int[] sales) {
-        int total = 0;
-        for (int sale : sales) {
+    public long calculateTotalSales(long[] sales) {
+        long total = 0;
+        for (long sale : sales) {
             total += sale;
         }
         return total;
     }
 
     //Средняя сумма продаж в месяц
-    public int calculateAverageSales(int[] sales) {
+    public long calculateAverageSales(long[] sales) {
         if (sales.length == 0) {
             return 0; // если массив пустой
         }
-        int total = calculateTotalSales(sales);
-        return (int) total / sales.length; //целочисленное деление без остатка
+        long total = calculateTotalSales(sales);
+        return total / sales.length; //целочисленное деление без остатка
     }
 
     //Номер месяца с максимальными продажами
-    public int findMonthWithMaxSales(int[] sales) {
+    public int findMonthWithMaxSales(long[] sales) {
         if (sales.length == 0) {
             return -1; // если массив пустой
         }
 
-        int maxSales = sales[0];
+        long maxSales = sales[0];
         int monthIndex = 0;
 
         for (int i = 1; i < sales.length; i++) {
@@ -40,12 +40,12 @@ public class StatsService {
     }
 
     //Номер месяца с минимальными продажами
-    public int findMonthWithMinSales(int[] sales) {
+    public long findMonthWithMinSales(long[] sales) {
         if (sales.length == 0) {
             return -1; // если массив пустой
         }
 
-        int minSales = sales[0];
+        long minSales = sales[0];
         int monthIndex = 0;
 
         for (int i = 1; i < sales.length; i++) {
@@ -59,11 +59,11 @@ public class StatsService {
     }
 
     //Кол-во месяцев ниже среднего
-    public int countMonthsBelowAverage(int[] sales) {
-        double average = calculateAverageSales(sales);
+    public int countMonthsBelowAverage(long[] sales) {
+        long average = calculateAverageSales(sales);
         int count = 0;
 
-        for (int sale : sales) {
+        for (long sale : sales) {
             if (sale < average) {
                 count++;
             }
@@ -73,11 +73,11 @@ public class StatsService {
     }
 
     //Кол-во месяцев выше среднего
-    public int countMonthsAboveAverage(int[] sales) {
+    public int countMonthsAboveAverage(long[] sales) {
         double average = calculateAverageSales(sales);
         int count = 0;
 
-        for (int sale : sales) {
+        for (long sale : sales) {
             if (sale > average) {
                 count++;
             }

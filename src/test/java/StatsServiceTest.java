@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StatsServiceTest {
     public StatsService service;
-    public int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
     /**
      * Внутри класса создаём поле с объектом StatsService чтобы использовать его
      * в каждом методе этого класса
@@ -18,7 +18,7 @@ public class StatsServiceTest {
     @Test
     void testCalculateTotalSales() {
         service = new StatsService();
-        int result = service.calculateTotalSales(sales);
+        long result = service.calculateTotalSales(sales);
         assertEquals(180, result);
     }
 
@@ -39,7 +39,7 @@ public class StatsServiceTest {
     @Test
     void testFindMonthWithMinSales() {
         service = new StatsService();
-        int result = service.findMonthWithMinSales(sales);
+        long result = service.findMonthWithMinSales(sales);
         assertEquals(9, result);
     }
 
