@@ -40,7 +40,7 @@ public class StatsService {
     }
 
     //Номер месяца с минимальными продажами
-    public long findMonthWithMinSales(long[] sales) {
+    public int findMonthWithMinSales(long[] sales) {
         if (sales.length == 0) {
             return -1; // если массив пустой
         }
@@ -74,7 +74,7 @@ public class StatsService {
 
     //Кол-во месяцев выше среднего
     public int countMonthsAboveAverage(long[] sales) {
-        double average = calculateAverageSales(sales);
+        long average = calculateAverageSales(sales);
         int count = 0;
 
         for (long sale : sales) {
