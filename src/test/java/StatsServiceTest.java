@@ -25,7 +25,7 @@ public class StatsServiceTest {
     @Test
     void testCalculateAverageSales() {
         service = new StatsService();
-        double result = service.calculateAverageSales(sales);
+        long result = service.calculateAverageSales(sales);
         assertEquals(15, result);
     }
 
@@ -39,7 +39,7 @@ public class StatsServiceTest {
     @Test
     void testFindMonthWithMinSales() {
         service = new StatsService();
-        long result = service.findMonthWithMinSales(sales);
+        int result = service.findMonthWithMinSales(sales);
         assertEquals(9, result);
     }
 
